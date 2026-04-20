@@ -31,20 +31,13 @@ export const Header = () => {
       )}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3 group">
-          <div className="flex flex-col items-center leading-none text-primary">
-             <div className="flex items-center gap-2">
-                <div className="font-serif font-bold text-lg rotate-0 sm:-rotate-90 origin-center sm:translate-y-2 uppercase tracking-tighter">Fine</div>
-                <div className="h-8 w-px bg-primary/30 mx-1 hidden sm:block" />
-                <div className="flex flex-col items-center">
-                   <div className="text-primary mb-[-4px]">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-                   </div>
-                   <div className="h-6 w-0.5 bg-primary rounded-full" />
-                </div>
-             </div>
-             <div className="text-[9px] tracking-[0.15em] font-serif uppercase mt-1 whitespace-nowrap">Of Downtown Orlando</div>
-          </div>
+        <Link to="/" className="flex items-center group">
+          <img 
+            src="input_file_2.png" 
+            alt={SITE_CONFIG.name} 
+            className="h-16 w-auto object-contain"
+            referrerPolicy="no-referrer"
+          />
         </Link>
 
         {/* Desktop Nav */}
