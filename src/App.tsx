@@ -25,7 +25,7 @@ function ScrollToTop() {
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/fine-dentistry-orlando">
       <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <Header />
