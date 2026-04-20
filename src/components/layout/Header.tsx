@@ -33,7 +33,7 @@ export const Header = () => {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <Link to="/" className="flex items-center group">
           <img 
-            src="input_file_2.png" 
+            src="../../assets/images/bannerlogo.png" 
             alt={SITE_CONFIG.name} 
             className="h-16 w-auto object-contain"
             referrerPolicy="no-referrer"
