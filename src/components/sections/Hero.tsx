@@ -4,12 +4,20 @@ import { SITE_CONFIG } from "@/src/constants/site";
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-neutral-subtle">
-      {/* Background Shapes */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 rounded-l-[100px] -z-10 translate-x-20" />
-      <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-secondary/10 rounded-full blur-3xl -z-10" />
+    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 -z-10">
+        <img 
+          src="input_file_3.png" 
+          alt="Fine Dentistry Team" 
+          className="w-full h-full object-cover"
+          referrerPolicy="no-referrer"
+        />
+        <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/40 to-transparent" />
+      </div>
 
-      <div className="section-padding grid lg:grid-cols-2 gap-12 items-center w-full">
+      <div className="section-padding grid lg:grid-cols-2 gap-12 items-center w-full relative z-10">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -17,21 +25,21 @@ export const Hero = () => {
           className="flex flex-col gap-8"
         >
           <div className="space-y-4">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold tracking-wide uppercase">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/20 text-primary-light text-sm font-semibold tracking-wide uppercase border border-primary/30">
               Welcome to Fine Dentistry
             </span>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl leading-[1.1] font-bold text-slate-900">
-              We Provide the Best Dental Care in <span className="text-primary">{SITE_CONFIG.city}</span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl leading-[1.1] font-bold text-white">
+              We Provide the Best Dental Care in <span className="text-primary-light">{SITE_CONFIG.city}</span>
             </h1>
-            <p className="text-lg text-slate-600 max-w-xl">
+            <p className="text-xl text-slate-200 max-w-xl font-medium">
               Experience modern dentistry with a gentle touch. Our advanced technology and 
               compassionate team ensure your comfort at every visit.
             </p>
           </div>
 
           <div className="flex flex-wrap gap-4">
-            <Button size="lg">Schedule Appointment</Button>
-            <Button size="lg" variant="outline">Call Now</Button>
+            <Button size="lg" variant="primary">Schedule Appointment</Button>
+            <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary">Call Now</Button>
           </div>
 
           {/* Inline Booking Form */}
@@ -39,23 +47,23 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="bg-white p-6 rounded-3xl shadow-xl border border-slate-100 max-w-lg"
+            className="bg-white/10 backdrop-blur-md p-6 rounded-3xl shadow-2xl border border-white/10 max-w-lg"
           >
-            <h3 className="text-xl font-bold mb-4 font-serif">Quick Booking</h3>
+            <h3 className="text-xl font-bold mb-4 font-serif text-white">Quick Booking</h3>
             <form className="grid sm:grid-cols-3 gap-4">
               <input
                 type="text"
                 placeholder="Name"
-                className="w-full px-4 py-3 rounded-xl bg-slate-50 border-none focus:ring-2 focus:ring-primary/20 text-sm"
+                className="w-full px-4 py-3 rounded-xl bg-white/10 border-white/20 focus:ring-2 focus:ring-primary/20 text-sm text-white placeholder:text-white/50"
               />
               <input
                 type="tel"
                 placeholder="Phone"
-                className="w-full px-4 py-3 rounded-xl bg-slate-50 border-none focus:ring-2 focus:ring-primary/20 text-sm"
+                className="w-full px-4 py-3 rounded-xl bg-white/10 border-white/20 focus:ring-2 focus:ring-primary/20 text-sm text-white placeholder:text-white/50"
               />
               <input
                 type="date"
-                className="w-full px-4 py-3 rounded-xl bg-slate-50 border-none focus:ring-2 focus:ring-primary/20 text-sm"
+                className="w-full px-4 py-3 rounded-xl bg-white/10 border-white/20 focus:ring-2 focus:ring-primary/20 text-sm text-white"
               />
               <Button size="sm" variant="secondary" className="sm:col-span-3">
                 Book My Visit
@@ -68,30 +76,31 @@ export const Hero = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
-          className="relative lg:h-[600px] order-first lg:order-last"
+          className="relative lg:h-[500px] hidden lg:flex items-center justify-center"
         >
-          <div className="absolute inset-0 bg-secondary/10 rounded-[40px] transform rotate-3 -z-10" />
-          <img
-            src="input_file_0.png"
-            alt="Dr. Aileen Trivedi"
-            className="w-full h-full object-cover rounded-[40px] shadow-2xl"
-            referrerPolicy="no-referrer"
-          />
-          
-          {/* Floating Element */}
-          <motion.div
-            animate={{ y: [0, -10, 0] }}
-            transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-            className="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-lg border border-slate-50 flex items-center gap-3"
-          >
-            <div className="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center text-secondary">
-               <Smile size={24} />
-            </div>
-            <div>
-              <p className="text-xs text-slate-500 font-medium">New Patient Special</p>
-              <p className="text-sm font-bold text-slate-900">$99 Full Exam</p>
-            </div>
-          </motion.div>
+          {/* We'll use a smaller portrait of Dr. Trivedi here to maintain identity without overwhelming */}
+          <div className="relative w-80 h-[450px]">
+             <div className="absolute inset-0 bg-secondary/20 rounded-[40px] transform rotate-6 -z-10" />
+             <img
+               src="input_file_0.png"
+               alt="Dr. Aileen Trivedi"
+               className="w-full h-full object-cover rounded-[40px] shadow-2xl border-4 border-white/10"
+               referrerPolicy="no-referrer"
+             />
+             <motion.div
+               animate={{ y: [0, -10, 0] }}
+               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+               className="absolute -bottom-6 -right-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-50 flex items-center gap-3"
+             >
+               <div className="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center text-secondary">
+                  <Smile size={24} />
+               </div>
+               <div>
+                 <p className="text-xs text-slate-500 font-medium">New Patient Special</p>
+                 <p className="text-sm font-bold text-slate-900">$99 Full Exam</p>
+               </div>
+             </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>

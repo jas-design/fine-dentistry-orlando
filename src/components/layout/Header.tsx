@@ -33,9 +33,9 @@ export const Header = () => {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <Link to="/" className="flex items-center group">
           <img 
-            src="@/src/assets/images/bannerlogo.png" 
+            src="input_file_2.png" 
             alt={SITE_CONFIG.name} 
-            className="h-16 w-auto object-contain"
+            className={cn("h-16 w-auto object-contain transition-all duration-300", !isScrolled && "brightness-0 invert")}
             referrerPolicy="no-referrer"
           />
         </Link>
@@ -48,13 +48,15 @@ export const Header = () => {
               to={link.href}
               className={cn(
                 "text-sm font-medium transition-colors hover:text-primary",
-                location.pathname === link.href ? "text-primary" : "text-slate-600"
+                isScrolled 
+                  ? (location.pathname === link.href ? "text-primary" : "text-slate-600")
+                  : "text-white hover:text-primary-light"
               )}
             >
               {link.name}
             </Link>
           ))}
-          <Button size="sm">Book Appointment</Button>
+          <Button size="sm" variant={isScrolled ? "primary" : "secondary"}>Book Appointment</Button>
         </nav>
 
         {/* Mobile Toggle */}
