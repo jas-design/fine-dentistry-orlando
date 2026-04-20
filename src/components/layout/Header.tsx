@@ -5,6 +5,7 @@ import { Button } from "@/src/components/ui/Button";
 import { MENU_LINKS, SITE_CONFIG } from "@/src/constants/site";
 import { cn } from "@/src/lib/utils";
 import { motion, AnimatePresence } from "motion/react";
+import bannerLogo from "@/src/assets/images/bannerlogo.png";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,16 +27,16 @@ export const Header = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-white/95 backdrop-blur-md shadow-md py-3" : "bg-transparent py-5"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-gradient-to-r from-slate-900 via-slate-900/40 to-transparent",
+        isScrolled ? "backdrop-blur-md shadow-md py-3 bg-gradient-to-r from-slate-900/95 via-slate-900/60 to-slate-900/40" : "py-5"
       )}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <Link to="/" className="flex items-center group">
-          <img 
-            src="input_file_2.png" 
+           <img 
+            src={bannerLogo} 
             alt={SITE_CONFIG.name} 
-            className={cn("h-16 w-auto object-contain transition-all duration-300", !isScrolled && "brightness-0 invert")}
+            className="h-16 w-auto object-contain"
             referrerPolicy="no-referrer"
           />
         </Link>

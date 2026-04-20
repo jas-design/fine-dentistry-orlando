@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Button } from "@/src/components/ui/Button";
 import { CheckCircle2 } from "lucide-react";
+import teamPhoto from "@/src/assets/images/teamphoto.webp";
 
 export const About = () => {
   const stats = [
@@ -21,7 +22,7 @@ export const About = () => {
         >
           <div className="relative z-10 rounded-[40px] overflow-hidden shadow-2xl">
             <img
-              src="input_file_1.png"
+              src={teamPhoto} 
               alt="Fine Dentistry Team"
               className="w-full h-full object-cover aspect-[4/5]"
               referrerPolicy="no-referrer"

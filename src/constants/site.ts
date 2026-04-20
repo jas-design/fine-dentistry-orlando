@@ -9,6 +9,8 @@ import {
   Facebook,
   Twitter
 } from "lucide-react";
+import drTrivediImage from "@/src/assets/images/dr-trivedi.webp";
+import teamPhoto from "@/src/assets/images/teamphoto.webp";
 
 export const SITE_CONFIG = {
   name: "Fine Dentistry",
@@ -108,13 +110,13 @@ export const DOCTORS = [
   {
     name: "Dr. Aileen Trivedi",
     specialty: "Founder & Lead Dentist",
-    image: "input_file_0.png",
+    image: drTrivediImage,
     description: "Bringing over 20 years of expertise and a passion for artistic clinical excellence to the Orlando community.",
   },
   {
     name: "The Fine Dentistry Team",
     specialty: "Dedicated Professionals",
-    image: "input_file_1.png",
+    image: teamPhoto,
     description: "Our diverse and skilled team works together to provide a seamless and comfortable patient experience.",
   },
 ];

@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Button } from "@/src/components/ui/Button";
 import { SITE_CONFIG } from "@/src/constants/site";
+import trivediPhoto from "@/src/assets/images/dr-trivedi.webp";
 
 export const Hero = () => {
   return (
@@ -82,7 +83,7 @@ export const Hero = () => {
           <div className="relative w-80 h-[450px]">
              <div className="absolute inset-0 bg-secondary/20 rounded-[40px] transform rotate-6 -z-10" />
              <img
-               src="input_file_0.png"
+               src={trivediPhoto} 
                alt="Dr. Aileen Trivedi"
                className="w-full h-full object-cover rounded-[40px] shadow-2xl border-4 border-white/10"
                referrerPolicy="no-referrer"
